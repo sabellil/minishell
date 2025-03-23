@@ -6,7 +6,7 @@
 /*   By: sabellil <sabellil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 13:38:39 by sabellil          #+#    #+#             */
-/*   Updated: 2025/03/21 20:19:27 by sabellil         ###   ########.fr       */
+/*   Updated: 2025/03/23 16:33:19 by sabellil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 extern volatile sig_atomic_t	g_sig_caught;
 
-static void	sig_quit_handler()
+static void	sig_quit_handler(int signum)
 {
+	(void)signum;
 	g_sig_caught = SIGQUIT;
 	ft_printf("Quit (core dumped)\n");
 	rl_redisplay();

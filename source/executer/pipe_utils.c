@@ -6,7 +6,7 @@
 /*   By: sabellil <sabellil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 14:04:28 by sabellil          #+#    #+#             */
-/*   Updated: 2025/03/23 14:59:15 by sabellil         ###   ########.fr       */
+/*   Updated: 2025/03/23 16:21:15 by sabellil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,11 @@ void	reset_pipe_fd(int pipe_fd[2])
 	pipe_fd[1] = -1;
 }
 
-void	finalize_pipeline_execution(t_cmd *cmd_lst, t_data *data,
-		int pipe_in)
+void	finalize_pipeline_execution(t_cmd *cmd_lst, t_data *data, int pipe_in)
 {
 	(void)pipe_in;
 	cleanup_pipeline(data, cmd_lst);
-	// if (pipe_in != -1)
-	// 	close(pipe_in);
 }
-
 
 void	close_pipe_fds(int pipe_fd[2])
 {

@@ -6,7 +6,7 @@
 /*   By: sabellil <sabellil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 11:39:12 by sabellil          #+#    #+#             */
-/*   Updated: 2025/03/23 14:42:12 by sabellil         ###   ########.fr       */
+/*   Updated: 2025/03/23 16:28:04 by sabellil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,6 @@ void	create_output_files(t_redirection *redirection, t_data *data)
 	}
 }
 
-// bool	handle_missing_input(t_cmd *cmd, t_data *data)
-// {
-// 	int	null_input_fd;
-
-// 	if (!check_input_existence(cmd->redirection, data))
-// 	{
-// 		null_input_fd = open("/dev/null", O_RDONLY);
-// 		if (null_input_fd != -1)
-// 			dup2(null_input_fd, STDIN_FILENO);
-// 		return (false);
-// 	}
-// 	return (true);
-// }
-
 bool	handle_missing_input(t_cmd *cmd, t_data *data)
 {
 	int	null_input_fd;
@@ -119,5 +105,5 @@ bool	handle_missing_input(t_cmd *cmd, t_data *data)
 		}
 		return (false);
 	}
-	return (true); // ✅ ce return manquait sûrement
+	return (true);
 }
